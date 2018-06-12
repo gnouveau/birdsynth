@@ -327,7 +327,7 @@ void finch(double *alpha, double *beta, int size, double *out) {
       }
       df = (double *)calloc(to, sizeof(double));
       if (cf == NULL) {
-        fprintf(stderr, "Allocation error, impossible to alloc %ld bytes for a",
+        fprintf(stderr, "Allocation error, impossible to alloc %ld bytes for cf",
                 to * sizeof(double));
         exit(-1);
       }
@@ -445,6 +445,7 @@ void finch(double *alpha, double *beta, int size, double *out) {
           }
         }
         taux++;
+		fflush(NULL);
 
         if (tiempot > 0.00) {
 
@@ -470,7 +471,7 @@ void finch(double *alpha, double *beta, int size, double *out) {
             aa.A1 = sqrt(aa.amplitud) + 10.5 * aa.noise;
           if ((tiempot > 0.214) && (tiempot < 0.255))
             aa.A1 = aa.A1 / 2.;
-          */
+		  */
           aa.A2 = aa.amplitud * 0.0;
           aa.A3 = 0.;
         }
